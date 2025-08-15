@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_suggestions_why_tos",
+  "info": {
+    "displayName": "WhyTo",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "WhytoList": {
+      "type": "text"
+    },
+    "WhyNotTo": {
+      "type": "string"
+    }
+  }
+}

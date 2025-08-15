@@ -1,0 +1,100 @@
+{
+  "kind": "collectionType",
+  "collectionName": "activities",
+  "info": {
+    "singularName": "activitie",
+    "pluralName": "activities",
+    "displayName": "activities",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "destination": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::destination.destination",
+      "inversedBy": "activities"
+    },
+    "bookings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::booking.booking",
+      "mappedBy": "activity"
+    },
+    "category": {
+      "type": "string"
+    },
+    "Inclsion": {
+      "type": "json"
+    },
+    "Exclusion": {
+      "type": "json"
+    },
+    "location": {
+      "type": "string"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "activity"
+    },
+    "travel_spots": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::travel-spot.travel-spot",
+      "mappedBy": "activity"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "Vendor_Name": {
+      "type": "string"
+    },
+    "Vendor_Desc": {
+      "type": "string"
+    },
+    "Vendor_pic": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Vendor_contact": {
+      "type": "biginteger"
+    },
+    "Vendor_Email": {
+      "type": "email"
+    }
+  }
+}

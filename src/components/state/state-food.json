@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_state_state_foods",
+  "info": {
+    "displayName": "StateFood",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "StateFood": {
+      "type": "string"
+    }
+  }
+}

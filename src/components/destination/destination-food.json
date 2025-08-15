@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_destination_destination_foods",
+  "info": {
+    "displayName": "Destination Food",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Shopitemname": {
+      "type": "string"
+    },
+    "shopitembio": {
+      "type": "string"
+    },
+    "ShopitemThumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

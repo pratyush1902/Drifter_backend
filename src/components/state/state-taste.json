@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_state_state_tastes",
+  "info": {
+    "displayName": "State_Taste",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "StateFood": {
+      "type": "string"
+    }
+  }
+}

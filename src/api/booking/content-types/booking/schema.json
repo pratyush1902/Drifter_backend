@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "singularName": "booking",
+    "pluralName": "bookings",
+    "displayName": "bookings",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_email": {
+      "type": "string"
+    },
+    "user_name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "num_persons": {
+      "type": "integer"
+    },
+    "total_amount": {
+      "type": "integer"
+    },
+    "payment_status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "success",
+        "failed",
+        "cancelled"
+      ],
+      "default": "pending"
+    },
+    "activity": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::activitie.activitie",
+      "inversedBy": "bookings"
+    },
+    "booking_date": {
+      "type": "date"
+    },
+    "order_id": {
+      "type": "string"
+    },
+    "payment_id": {
+      "type": "string"
+    },
+    "experienceDate": {
+      "type": "date"
+    }
+  }
+}

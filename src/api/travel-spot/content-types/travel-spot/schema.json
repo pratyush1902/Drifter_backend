@@ -1,0 +1,89 @@
+{
+  "kind": "collectionType",
+  "collectionName": "travel_spots",
+  "info": {
+    "singularName": "travel-spot",
+    "pluralName": "travel-spots",
+    "displayName": "Travel Spot",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "destination": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::destination.destination",
+      "inversedBy": "travel_spots"
+    },
+    "Type": {
+      "type": "string"
+    },
+    "Thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "SpotBackground": {
+      "type": "text"
+    },
+    "SpotPicture": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "SpotLocalTransport": {
+      "type": "text"
+    },
+    "SpotTaxi": {
+      "type": "text"
+    },
+    "SpotRoad": {
+      "type": "text"
+    },
+    "SpotLocation": {
+      "type": "string"
+    },
+    "SpotEntryfee": {
+      "type": "string"
+    },
+    "SpotTime": {
+      "type": "string"
+    },
+    "Spotbackground": {
+      "type": "text"
+    },
+    "SpotInsight": {
+      "type": "text"
+    },
+    "SpotTips": {
+      "type": "text"
+    },
+    "Spotbio": {
+      "type": "string"
+    },
+    "activity": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::activitie.activitie",
+      "inversedBy": "travel_spots"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shoopings",
+  "info": {
+    "singularName": "shooping",
+    "pluralName": "shoopings",
+    "displayName": "Shooping",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Shopname": {
+      "type": "string"
+    },
+    "ShopBio": {
+      "type": "string"
+    },
+    "destination": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::destination.destination",
+      "inversedBy": "shoopings"
+    },
+    "Shoppic": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Shoplocation": {
+      "type": "string"
+    }
+  }
+}

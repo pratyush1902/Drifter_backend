@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_suggestions_local_cabs",
+  "info": {
+    "displayName": "LocalCab"
+  },
+  "options": {},
+  "attributes": {
+    "Service": {
+      "type": "string"
+    },
+    "Contact": {
+      "type": "string"
+    },
+    "Availability": {
+      "type": "string"
+    }
+  }
+}

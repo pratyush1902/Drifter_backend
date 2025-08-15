@@ -1,0 +1,184 @@
+{
+  "kind": "collectionType",
+  "collectionName": "destinations",
+  "info": {
+    "singularName": "destination",
+    "pluralName": "destinations",
+    "displayName": "Destination",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "unique": true
+    },
+    "Images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "travel_spots": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::travel-spot.travel-spot",
+      "mappedBy": "destination"
+    },
+    "Avgtemp": {
+      "type": "string"
+    },
+    "Rainfall": {
+      "type": "string"
+    },
+    "Snowfall": {
+      "type": "string"
+    },
+    "NoOfTourist": {
+      "type": "integer"
+    },
+    "state": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::state.state",
+      "inversedBy": "destinations"
+    },
+    "Popular": {
+      "type": "boolean"
+    },
+    "DestinatonOfTheWeek": {
+      "type": "boolean"
+    },
+    "Latitude": {
+      "type": "decimal"
+    },
+    "Longitude": {
+      "type": "decimal"
+    },
+    "food_outlets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::food-outlet.food-outlet",
+      "mappedBy": "destination"
+    },
+    "destinations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::destination.destination",
+      "inversedBy": "nearby_Destination"
+    },
+    "nearby_Destination": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::destination.destination",
+      "inversedBy": "destinations"
+    },
+    "activities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::activitie.activitie",
+      "mappedBy": "destination"
+    },
+    "Season": {
+      "type": "enumeration",
+      "enum": [
+        "Peak Season",
+        "Moderate Season",
+        "Off Season "
+      ]
+    },
+    "WhyVisit": {
+      "type": "json"
+    },
+    "WhynotVisit": {
+      "type": "json"
+    },
+    "Reach_road": {
+      "type": "text"
+    },
+    "Reach_Bus": {
+      "type": "text"
+    },
+    "Reach_Train": {
+      "type": "text"
+    },
+    "Reach_Plane": {
+      "type": "text"
+    },
+    "Traceltips": {
+      "type": "json"
+    },
+    "MoneySave": {
+      "type": "json"
+    },
+    "ScamSafe": {
+      "type": "json"
+    },
+    "Contributer": {
+      "type": "json"
+    },
+    "Destination_Gallary": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ReachRoadPrice": {
+      "type": "string"
+    },
+    "ReachBusPrice": {
+      "type": "string"
+    },
+    "ReachTrainPice": {
+      "type": "string"
+    },
+    "ReachPlanePrice": {
+      "type": "string"
+    },
+    "ReachRoadTime": {
+      "type": "string"
+    },
+    "ReachBusTime": {
+      "type": "string"
+    },
+    "ReachTrainTime": {
+      "type": "string"
+    },
+    "ReachPlaneTime": {
+      "type": "string"
+    },
+    "LocalBus": {
+      "type": "json"
+    },
+    "LocalCab": {
+      "type": "json"
+    },
+    "LocalAuto": {
+      "type": "json"
+    },
+    "shoopings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::shooping.shooping",
+      "mappedBy": "destination"
+    },
+    "DestinationFood": {
+      "type": "component",
+      "repeatable": true,
+      "component": "destination.destination-food"
+    }
+  }
+}

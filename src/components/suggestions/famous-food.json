@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_suggestions_famous_foods",
+  "info": {
+    "displayName": "Famous food"
+  },
+  "options": {},
+  "attributes": {
+    "foodName": {
+      "type": "string"
+    },
+    "Foodbio": {
+      "type": "string"
+    },
+    "foodPic": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_state_statelandmarks",
+  "info": {
+    "displayName": "Statelandmark",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "StateLandmark": {
+      "type": "string"
+    }
+  }
+}

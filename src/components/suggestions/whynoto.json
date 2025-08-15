@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_suggestions_whynotos",
+  "info": {
+    "displayName": "whynoto"
+  },
+  "options": {},
+  "attributes": {
+    "Why_not_too": {
+      "type": "string"
+    }
+  }
+}
