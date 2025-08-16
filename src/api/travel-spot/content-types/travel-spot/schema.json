@@ -52,20 +52,14 @@
     "SpotLocalTransport": {
       "type": "text"
     },
-    "SpotTaxi": {
-      "type": "text"
-    },
-    "SpotRoad": {
-      "type": "text"
-    },
     "SpotLocation": {
-      "type": "string"
+      "type": "text"
     },
     "SpotEntryfee": {
-      "type": "string"
+      "type": "text"
     },
     "SpotTime": {
-      "type": "string"
+      "type": "text"
     },
     "Spotbackground": {
       "type": "text"
@@ -77,7 +71,7 @@
       "type": "text"
     },
     "Spotbio": {
-      "type": "string"
+      "type": "text"
     },
     "activity": {
       "type": "relation",

@@ -1189,15 +1189,13 @@ export interface ApiTravelSpotTravelSpot extends Schema.CollectionType {
       true
     >;
     SpotLocalTransport: Attribute.Text;
-    SpotTaxi: Attribute.Text;
-    SpotRoad: Attribute.Text;
-    SpotLocation: Attribute.String;
-    SpotEntryfee: Attribute.String;
-    SpotTime: Attribute.String;
+    SpotLocation: Attribute.Text;
+    SpotEntryfee: Attribute.Text;
+    SpotTime: Attribute.Text;
     Spotbackground: Attribute.Text;
     SpotInsight: Attribute.Text;
     SpotTips: Attribute.Text;
-    Spotbio: Attribute.String;
+    Spotbio: Attribute.Text;
     activity: Attribute.Relation<
       'api::travel-spot.travel-spot',
       'manyToOne',
