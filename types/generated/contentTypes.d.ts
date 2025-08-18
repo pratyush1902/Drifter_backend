@@ -1029,6 +1029,8 @@ export interface ApiFoodOutletFoodOutlet extends Schema.CollectionType {
       'api::destination.destination'
     >;
     OutletLocation: Attribute.String;
+    Food_item: Attribute.JSON;
+    Food_infoo: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
