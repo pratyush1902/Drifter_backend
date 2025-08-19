@@ -1008,6 +1008,37 @@ export interface ApiDestinationDestination extends Schema.CollectionType {
   };
 }
 
+export interface ApiFoodInfoFoodInfo extends Schema.CollectionType {
+  collectionName: 'food_infos';
+  info: {
+    singularName: 'food-info';
+    pluralName: 'food-infos';
+    displayName: 'Food info';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    foodinfo: Attribute.Text;
+    foodlist: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::food-info.food-info',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::food-info.food-info',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFoodOutletFoodOutlet extends Schema.CollectionType {
   collectionName: 'food_outlets';
   info: {
@@ -1029,8 +1060,6 @@ export interface ApiFoodOutletFoodOutlet extends Schema.CollectionType {
       'api::destination.destination'
     >;
     OutletLocation: Attribute.String;
-    Food_item: Attribute.JSON;
-    Food_infoo: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1278,6 +1307,7 @@ declare module '@strapi/types' {
       'api::activitie.activitie': ApiActivitieActivitie;
       'api::booking.booking': ApiBookingBooking;
       'api::destination.destination': ApiDestinationDestination;
+      'api::food-info.food-info': ApiFoodInfoFoodInfo;
       'api::food-outlet.food-outlet': ApiFoodOutletFoodOutlet;
       'api::review.review': ApiReviewReview;
       'api::shooping.shooping': ApiShoopingShooping;

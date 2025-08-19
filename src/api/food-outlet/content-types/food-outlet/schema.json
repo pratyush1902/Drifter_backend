@@ -37,12 +37,6 @@
     },
     "OutletLocation": {
       "type": "string"
-    },
-    "Food_item": {
-      "type": "json"
-    },
-    "Food_infoo": {
-      "type": "text"
     }
   }
 }

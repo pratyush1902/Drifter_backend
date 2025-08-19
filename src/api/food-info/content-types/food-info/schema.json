@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "food_infos",
+  "info": {
+    "singularName": "food-info",
+    "pluralName": "food-infos",
+    "displayName": "Food info"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "foodinfo": {
+      "type": "text"
+    },
+    "foodlist": {
+      "type": "json"
+    }
+  }
+}
