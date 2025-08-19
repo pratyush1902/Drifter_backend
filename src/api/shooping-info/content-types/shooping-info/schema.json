@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shooping_infos",
+  "info": {
+    "singularName": "shooping-info",
+    "pluralName": "shooping-infos",
+    "displayName": "ShoopingInfo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "shoopingInfo": {
+      "type": "string"
+    },
+    "destination": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::destination.destination"
+    }
+  }
+}

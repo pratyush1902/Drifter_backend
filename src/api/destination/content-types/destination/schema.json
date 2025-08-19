@@ -179,6 +179,12 @@
       "type": "component",
       "repeatable": true,
       "component": "destination.destination-food"
+    },
+    "shooping_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::shooping-item.shooping-item",
+      "mappedBy": "destination"
     }
   }
 }

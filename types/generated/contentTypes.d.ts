@@ -990,6 +990,11 @@ export interface ApiDestinationDestination extends Schema.CollectionType {
       'api::shooping.shooping'
     >;
     DestinationFood: Attribute.Component<'destination.destination-food', true>;
+    shooping_items: Attribute.Relation<
+      'api::destination.destination',
+      'oneToMany',
+      'api::shooping-item.shooping-item'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1160,6 +1165,78 @@ export interface ApiShoopingShooping extends Schema.CollectionType {
   };
 }
 
+export interface ApiShoopingInfoShoopingInfo extends Schema.CollectionType {
+  collectionName: 'shooping_infos';
+  info: {
+    singularName: 'shooping-info';
+    pluralName: 'shooping-infos';
+    displayName: 'ShoopingInfo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    shoopingInfo: Attribute.String;
+    destination: Attribute.Relation<
+      'api::shooping-info.shooping-info',
+      'oneToOne',
+      'api::destination.destination'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::shooping-info.shooping-info',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::shooping-info.shooping-info',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiShoopingItemShoopingItem extends Schema.CollectionType {
+  collectionName: 'shooping_items';
+  info: {
+    singularName: 'shooping-item';
+    pluralName: 'shooping-items';
+    displayName: 'ShoopingItem';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    itemname: Attribute.String;
+    itemPic: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    itemBio: Attribute.String;
+    destination: Attribute.Relation<
+      'api::shooping-item.shooping-item',
+      'manyToOne',
+      'api::destination.destination'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::shooping-item.shooping-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::shooping-item.shooping-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiStateState extends Schema.CollectionType {
   collectionName: 'states';
   info: {
@@ -1317,6 +1394,8 @@ declare module '@strapi/types' {
       'api::food-outlet.food-outlet': ApiFoodOutletFoodOutlet;
       'api::review.review': ApiReviewReview;
       'api::shooping.shooping': ApiShoopingShooping;
+      'api::shooping-info.shooping-info': ApiShoopingInfoShoopingInfo;
+      'api::shooping-item.shooping-item': ApiShoopingItemShoopingItem;
       'api::state.state': ApiStateState;
       'api::travel-spot.travel-spot': ApiTravelSpotTravelSpot;
       'api::user-profile.user-profile': ApiUserProfileUserProfile;

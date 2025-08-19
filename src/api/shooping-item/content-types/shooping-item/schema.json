@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shooping_items",
+  "info": {
+    "singularName": "shooping-item",
+    "pluralName": "shooping-items",
+    "displayName": "ShoopingItem"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "itemname": {
+      "type": "string"
+    },
+    "itemPic": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "itemBio": {
+      "type": "string"
+    },
+    "destination": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::destination.destination",
+      "inversedBy": "shooping_items"
+    }
+  }
+}
