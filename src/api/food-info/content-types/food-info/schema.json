@@ -4,7 +4,8 @@
   "info": {
     "singularName": "food-info",
     "pluralName": "food-infos",
-    "displayName": "Food info"
+    "displayName": "Food info",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,6 +17,11 @@
     },
     "foodlist": {
       "type": "json"
+    },
+    "destination": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::destination.destination"
     }
   }
 }

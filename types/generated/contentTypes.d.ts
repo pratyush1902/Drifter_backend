@@ -1014,6 +1014,7 @@ export interface ApiFoodInfoFoodInfo extends Schema.CollectionType {
     singularName: 'food-info';
     pluralName: 'food-infos';
     displayName: 'Food info';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1021,6 +1022,11 @@ export interface ApiFoodInfoFoodInfo extends Schema.CollectionType {
   attributes: {
     foodinfo: Attribute.Text;
     foodlist: Attribute.JSON;
+    destination: Attribute.Relation<
+      'api::food-info.food-info',
+      'oneToOne',
+      'api::destination.destination'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
