@@ -4,7 +4,8 @@
   "info": {
     "singularName": "shooping-info",
     "pluralName": "shooping-infos",
-    "displayName": "ShoopingInfo"
+    "displayName": "ShoopingInfo",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,7 +13,7 @@
   "pluginOptions": {},
   "attributes": {
     "shoopingInfo": {
-      "type": "string"
+      "type": "text"
     },
     "destination": {
       "type": "relation",

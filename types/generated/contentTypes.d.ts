@@ -1171,12 +1171,13 @@ export interface ApiShoopingInfoShoopingInfo extends Schema.CollectionType {
     singularName: 'shooping-info';
     pluralName: 'shooping-infos';
     displayName: 'ShoopingInfo';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    shoopingInfo: Attribute.String;
+    shoopingInfo: Attribute.Text;
     destination: Attribute.Relation<
       'api::shooping-info.shooping-info',
       'oneToOne',
