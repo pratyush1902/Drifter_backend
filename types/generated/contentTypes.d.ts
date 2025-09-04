@@ -833,11 +833,11 @@ export interface ApiActivitieActivitie extends Schema.CollectionType {
       'api::travel-spot.travel-spot'
     >;
     slug: Attribute.UID<'api::activitie.activitie', 'name'>;
-    Vendor_Name: Attribute.String;
-    Vendor_Desc: Attribute.String;
-    Vendor_pic: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Vendor_contact: Attribute.BigInteger;
-    Vendor_Email: Attribute.Email;
+    callback_requests: Attribute.Relation<
+      'api::activitie.activitie',
+      'oneToMany',
+      'api::callback.callback'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -904,6 +904,45 @@ export interface ApiBookingBooking extends Schema.CollectionType {
   };
 }
 
+export interface ApiCallbackCallback extends Schema.CollectionType {
+  collectionName: 'callbacks';
+  info: {
+    singularName: 'callback';
+    pluralName: 'callbacks';
+    displayName: 'Callback Request';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    phone: Attribute.String;
+    bookingDate: Attribute.Date;
+    preferredTime: Attribute.String;
+    activity: Attribute.Relation<
+      'api::callback.callback',
+      'manyToOne',
+      'api::activitie.activitie'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::callback.callback',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::callback.callback',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDestinationDestination extends Schema.CollectionType {
   collectionName: 'destinations';
   info: {
@@ -941,16 +980,6 @@ export interface ApiDestinationDestination extends Schema.CollectionType {
       'oneToMany',
       'api::food-outlet.food-outlet'
     >;
-    destinations: Attribute.Relation<
-      'api::destination.destination',
-      'manyToMany',
-      'api::destination.destination'
-    >;
-    nearby_Destination: Attribute.Relation<
-      'api::destination.destination',
-      'manyToMany',
-      'api::destination.destination'
-    >;
     activities: Attribute.Relation<
       'api::destination.destination',
       'oneToMany',
@@ -965,7 +994,7 @@ export interface ApiDestinationDestination extends Schema.CollectionType {
     Reach_Bus: Attribute.Text;
     Reach_Train: Attribute.Text;
     Reach_Plane: Attribute.Text;
-    Traceltips: Attribute.JSON;
+    Traveltips: Attribute.JSON;
     MoneySave: Attribute.JSON;
     ScamSafe: Attribute.JSON;
     Contributer: Attribute.JSON;
@@ -995,6 +1024,7 @@ export interface ApiDestinationDestination extends Schema.CollectionType {
       'oneToMany',
       'api::shooping-item.shooping-item'
     >;
+    slug: Attribute.UID<'api::destination.destination', 'Name'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1260,6 +1290,7 @@ export interface ApiStateState extends Schema.CollectionType {
     StateThumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     StateFood: Attribute.JSON;
     StateLandmark: Attribute.JSON;
+    slug: Attribute.UID<'api::state.state', 'StateName'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1316,6 +1347,7 @@ export interface ApiTravelSpotTravelSpot extends Schema.CollectionType {
       'manyToOne',
       'api::activitie.activitie'
     >;
+    slug: Attribute.UID<'api::travel-spot.travel-spot', 'Name'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1390,6 +1422,7 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::activitie.activitie': ApiActivitieActivitie;
       'api::booking.booking': ApiBookingBooking;
+      'api::callback.callback': ApiCallbackCallback;
       'api::destination.destination': ApiDestinationDestination;
       'api::food-info.food-info': ApiFoodInfoFoodInfo;
       'api::food-outlet.food-outlet': ApiFoodOutletFoodOutlet;

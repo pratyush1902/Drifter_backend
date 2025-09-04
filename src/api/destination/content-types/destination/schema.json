@@ -69,18 +69,6 @@
       "target": "api::food-outlet.food-outlet",
       "mappedBy": "destination"
     },
-    "destinations": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::destination.destination",
-      "inversedBy": "nearby_Destination"
-    },
-    "nearby_Destination": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::destination.destination",
-      "inversedBy": "destinations"
-    },
     "activities": {
       "type": "relation",
       "relation": "oneToMany",
@@ -113,7 +101,7 @@
     "Reach_Plane": {
       "type": "text"
     },
-    "Traceltips": {
+    "Traveltips": {
       "type": "json"
     },
     "MoneySave": {
@@ -185,6 +173,10 @@
       "relation": "oneToMany",
       "target": "api::shooping-item.shooping-item",
       "mappedBy": "destination"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Name"
     }
   }
 }

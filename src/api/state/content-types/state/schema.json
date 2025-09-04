@@ -40,6 +40,10 @@
     },
     "StateLandmark": {
       "type": "json"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "StateName"
     }
   }
 }

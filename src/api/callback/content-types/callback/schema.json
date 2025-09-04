@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "callbacks",
+  "info": {
+    "singularName": "callback",
+    "pluralName": "callbacks",
+    "displayName": "Callback Request",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "bookingDate": {
+      "type": "date"
+    },
+    "preferredTime": {
+      "type": "string"
+    },
+    "activity": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::activitie.activitie",
+      "inversedBy": "callback_requests"
+    }
+  }
+}

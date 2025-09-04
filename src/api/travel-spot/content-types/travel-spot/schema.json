@@ -78,6 +78,10 @@
       "relation": "manyToOne",
       "target": "api::activitie.activitie",
       "inversedBy": "travel_spots"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Name"
     }
   }
 }

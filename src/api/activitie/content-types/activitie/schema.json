@@ -73,28 +73,11 @@
       "type": "uid",
       "targetField": "name"
     },
-    "Vendor_Name": {
-      "type": "string"
-    },
-    "Vendor_Desc": {
-      "type": "string"
-    },
-    "Vendor_pic": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "Vendor_contact": {
-      "type": "biginteger"
-    },
-    "Vendor_Email": {
-      "type": "email"
+    "callback_requests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::callback.callback",
+      "mappedBy": "activity"
     }
   }
 }
