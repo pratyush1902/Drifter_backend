@@ -65,9 +65,9 @@
     },
     "travel_spots": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::travel-spot.travel-spot",
-      "mappedBy": "activity"
+      "mappedBy": "activities"
     },
     "slug": {
       "type": "uid",

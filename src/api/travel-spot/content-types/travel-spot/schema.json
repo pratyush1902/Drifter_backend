@@ -61,9 +61,6 @@
     "SpotTime": {
       "type": "text"
     },
-    "Spotbackground": {
-      "type": "text"
-    },
     "SpotInsight": {
       "type": "text"
     },
@@ -73,15 +70,15 @@
     "Spotbio": {
       "type": "text"
     },
-    "activity": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::activitie.activitie",
-      "inversedBy": "travel_spots"
-    },
     "slug": {
       "type": "uid",
       "targetField": "Name"
+    },
+    "activities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::activitie.activitie",
+      "inversedBy": "travel_spots"
     }
   }
 }

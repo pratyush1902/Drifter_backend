@@ -829,7 +829,7 @@ export interface ApiActivitieActivitie extends Schema.CollectionType {
     >;
     travel_spots: Attribute.Relation<
       'api::activitie.activitie',
-      'oneToMany',
+      'manyToMany',
       'api::travel-spot.travel-spot'
     >;
     slug: Attribute.UID<'api::activitie.activitie', 'name'>;
@@ -965,7 +965,6 @@ export interface ApiDestinationDestination extends Schema.CollectionType {
     Avgtemp: Attribute.String;
     Rainfall: Attribute.String;
     Snowfall: Attribute.String;
-    NoOfTourist: Attribute.Integer;
     state: Attribute.Relation<
       'api::destination.destination',
       'manyToOne',
@@ -1002,14 +1001,6 @@ export interface ApiDestinationDestination extends Schema.CollectionType {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    ReachRoadPrice: Attribute.String;
-    ReachBusPrice: Attribute.String;
-    ReachTrainPice: Attribute.String;
-    ReachPlanePrice: Attribute.String;
-    ReachRoadTime: Attribute.String;
-    ReachBusTime: Attribute.String;
-    ReachTrainTime: Attribute.String;
-    ReachPlaneTime: Attribute.String;
     LocalBus: Attribute.JSON;
     LocalCab: Attribute.JSON;
     LocalAuto: Attribute.JSON;
@@ -1338,16 +1329,15 @@ export interface ApiTravelSpotTravelSpot extends Schema.CollectionType {
     SpotLocation: Attribute.Text;
     SpotEntryfee: Attribute.Text;
     SpotTime: Attribute.Text;
-    Spotbackground: Attribute.Text;
     SpotInsight: Attribute.Text;
     SpotTips: Attribute.Text;
     Spotbio: Attribute.Text;
-    activity: Attribute.Relation<
+    slug: Attribute.UID<'api::travel-spot.travel-spot', 'Name'>;
+    activities: Attribute.Relation<
       'api::travel-spot.travel-spot',
-      'manyToOne',
+      'manyToMany',
       'api::activitie.activitie'
     >;
-    slug: Attribute.UID<'api::travel-spot.travel-spot', 'Name'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

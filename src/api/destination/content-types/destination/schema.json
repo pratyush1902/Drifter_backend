@@ -42,9 +42,6 @@
     "Snowfall": {
       "type": "string"
     },
-    "NoOfTourist": {
-      "type": "integer"
-    },
     "state": {
       "type": "relation",
       "relation": "manyToOne",
@@ -123,30 +120,6 @@
         "videos",
         "audios"
       ]
-    },
-    "ReachRoadPrice": {
-      "type": "string"
-    },
-    "ReachBusPrice": {
-      "type": "string"
-    },
-    "ReachTrainPice": {
-      "type": "string"
-    },
-    "ReachPlanePrice": {
-      "type": "string"
-    },
-    "ReachRoadTime": {
-      "type": "string"
-    },
-    "ReachBusTime": {
-      "type": "string"
-    },
-    "ReachTrainTime": {
-      "type": "string"
-    },
-    "ReachPlaneTime": {
-      "type": "string"
     },
     "LocalBus": {
       "type": "json"
