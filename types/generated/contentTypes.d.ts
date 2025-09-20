@@ -1337,7 +1337,6 @@ export interface ApiTravelSpotTravelSpot extends Schema.CollectionType {
     Entrytiming: Attribute.JSON;
     travelTips: Attribute.JSON;
     Travelinsights: Attribute.JSON;
-    SpotBackground: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -76,9 +76,6 @@
     },
     "Travelinsights": {
       "type": "json"
-    },
-    "SpotBackground": {
-      "type": "json"
     }
   }
 }
