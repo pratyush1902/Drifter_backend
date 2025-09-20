@@ -73,11 +73,11 @@
       "target": "api::callback.callback",
       "mappedBy": "activity"
     },
-    "travel_spots": {
+    "travel_spot": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::travel-spot.travel-spot",
-      "mappedBy": "activity"
+      "inversedBy": "activities"
     }
   }
 }

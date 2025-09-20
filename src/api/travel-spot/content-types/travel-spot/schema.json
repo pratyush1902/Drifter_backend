@@ -35,9 +35,6 @@
         "audios"
       ]
     },
-    "SpotBackground": {
-      "type": "text"
-    },
     "SpotPicture": {
       "type": "media",
       "multiple": true,
@@ -49,22 +46,7 @@
         "audios"
       ]
     },
-    "SpotLocalTransport": {
-      "type": "text"
-    },
     "SpotLocation": {
-      "type": "text"
-    },
-    "SpotEntryfee": {
-      "type": "text"
-    },
-    "SpotTime": {
-      "type": "text"
-    },
-    "SpotInsight": {
-      "type": "text"
-    },
-    "SpotTips": {
       "type": "text"
     },
     "Spotbio": {
@@ -74,11 +56,29 @@
       "type": "uid",
       "targetField": "Name"
     },
-    "activity": {
+    "activities": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
       "target": "api::activitie.activitie",
-      "inversedBy": "travel_spots"
+      "mappedBy": "travel_spot"
+    },
+    "Howtoreach": {
+      "type": "json"
+    },
+    "Entryfees": {
+      "type": "json"
+    },
+    "Entrytiming": {
+      "type": "json"
+    },
+    "travelTips": {
+      "type": "json"
+    },
+    "Travelinsights": {
+      "type": "json"
+    },
+    "SpotBackground": {
+      "type": "json"
     }
   }
 }

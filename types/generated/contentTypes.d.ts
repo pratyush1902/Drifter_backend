@@ -833,9 +833,9 @@ export interface ApiActivitieActivitie extends Schema.CollectionType {
       'oneToMany',
       'api::callback.callback'
     >;
-    travel_spots: Attribute.Relation<
+    travel_spot: Attribute.Relation<
       'api::activitie.activitie',
-      'oneToMany',
+      'manyToOne',
       'api::travel-spot.travel-spot'
     >;
     createdAt: Attribute.DateTime;
@@ -1320,24 +1320,24 @@ export interface ApiTravelSpotTravelSpot extends Schema.CollectionType {
     >;
     Type: Attribute.String;
     Thumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    SpotBackground: Attribute.Text;
     SpotPicture: Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    SpotLocalTransport: Attribute.Text;
     SpotLocation: Attribute.Text;
-    SpotEntryfee: Attribute.Text;
-    SpotTime: Attribute.Text;
-    SpotInsight: Attribute.Text;
-    SpotTips: Attribute.Text;
     Spotbio: Attribute.Text;
     slug: Attribute.UID<'api::travel-spot.travel-spot', 'Name'>;
-    activity: Attribute.Relation<
+    activities: Attribute.Relation<
       'api::travel-spot.travel-spot',
-      'manyToOne',
+      'oneToMany',
       'api::activitie.activitie'
     >;
+    Howtoreach: Attribute.JSON;
+    Entryfees: Attribute.JSON;
+    Entrytiming: Attribute.JSON;
+    travelTips: Attribute.JSON;
+    Travelinsights: Attribute.JSON;
+    SpotBackground: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
