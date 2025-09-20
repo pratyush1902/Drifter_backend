@@ -827,16 +827,16 @@ export interface ApiActivitieActivitie extends Schema.CollectionType {
       'oneToMany',
       'api::review.review'
     >;
-    travel_spots: Attribute.Relation<
-      'api::activitie.activitie',
-      'manyToMany',
-      'api::travel-spot.travel-spot'
-    >;
     slug: Attribute.UID<'api::activitie.activitie', 'name'>;
     callback_requests: Attribute.Relation<
       'api::activitie.activitie',
       'oneToMany',
       'api::callback.callback'
+    >;
+    travel_spots: Attribute.Relation<
+      'api::activitie.activitie',
+      'oneToMany',
+      'api::travel-spot.travel-spot'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1333,9 +1333,9 @@ export interface ApiTravelSpotTravelSpot extends Schema.CollectionType {
     SpotTips: Attribute.Text;
     Spotbio: Attribute.Text;
     slug: Attribute.UID<'api::travel-spot.travel-spot', 'Name'>;
-    activities: Attribute.Relation<
+    activity: Attribute.Relation<
       'api::travel-spot.travel-spot',
-      'manyToMany',
+      'manyToOne',
       'api::activitie.activitie'
     >;
     createdAt: Attribute.DateTime;

@@ -74,9 +74,9 @@
       "type": "uid",
       "targetField": "Name"
     },
-    "activities": {
+    "activity": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "manyToOne",
       "target": "api::activitie.activitie",
       "inversedBy": "travel_spots"
     }

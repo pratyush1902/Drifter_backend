@@ -63,12 +63,6 @@
       "target": "api::review.review",
       "mappedBy": "activity"
     },
-    "travel_spots": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::travel-spot.travel-spot",
-      "mappedBy": "activities"
-    },
     "slug": {
       "type": "uid",
       "targetField": "name"
@@ -77,6 +71,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::callback.callback",
+      "mappedBy": "activity"
+    },
+    "travel_spots": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::travel-spot.travel-spot",
       "mappedBy": "activity"
     }
   }
