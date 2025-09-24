@@ -142,13 +142,13 @@
     "Reachroad": {
       "type": "json"
     },
-    "ReachTrain": {
+    "Reachtrain": {
       "type": "json"
     },
-    "ReachPlane": {
+    "Reachplane": {
       "type": "json"
     },
-    "ReachBus": {
+    "Reachbus": {
       "type": "json"
     }
   }

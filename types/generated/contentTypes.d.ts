@@ -1013,9 +1013,9 @@ export interface ApiDestinationDestination extends Schema.CollectionType {
     >;
     slug: Attribute.UID<'api::destination.destination', 'Name'>;
     Reachroad: Attribute.JSON;
-    ReachTrain: Attribute.JSON;
-    ReachPlane: Attribute.JSON;
-    ReachBus: Attribute.JSON;
+    Reachtrain: Attribute.JSON;
+    Reachplane: Attribute.JSON;
+    Reachbus: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
