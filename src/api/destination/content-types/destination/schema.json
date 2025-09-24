@@ -139,7 +139,7 @@
       "type": "uid",
       "targetField": "Name"
     },
-    "ReachRoad": {
+    "Reachroad": {
       "type": "json"
     },
     "ReachTrain": {

@@ -1012,7 +1012,7 @@ export interface ApiDestinationDestination extends Schema.CollectionType {
       'api::shooping-item.shooping-item'
     >;
     slug: Attribute.UID<'api::destination.destination', 'Name'>;
-    ReachRoad: Attribute.JSON;
+    Reachroad: Attribute.JSON;
     ReachTrain: Attribute.JSON;
     ReachPlane: Attribute.JSON;
     ReachBus: Attribute.JSON;
