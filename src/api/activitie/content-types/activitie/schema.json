@@ -55,7 +55,7 @@
       "type": "json"
     },
     "location": {
-      "type": "string"
+      "type": "text"
     },
     "reviews": {
       "type": "relation",

@@ -821,7 +821,7 @@ export interface ApiActivitieActivitie extends Schema.CollectionType {
     category: Attribute.String;
     Inclsion: Attribute.JSON;
     Exclusion: Attribute.JSON;
-    location: Attribute.String;
+    location: Attribute.Text;
     reviews: Attribute.Relation<
       'api::activitie.activitie',
       'oneToMany',
