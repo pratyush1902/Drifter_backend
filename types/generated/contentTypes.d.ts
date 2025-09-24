@@ -806,7 +806,6 @@ export interface ApiActivitieActivitie extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Unique;
     description: Attribute.String;
-    price: Attribute.Integer;
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     destination: Attribute.Relation<
       'api::activitie.activitie',
@@ -838,6 +837,7 @@ export interface ApiActivitieActivitie extends Schema.CollectionType {
       'manyToOne',
       'api::travel-spot.travel-spot'
     >;
+    Price: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

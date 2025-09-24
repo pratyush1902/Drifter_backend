@@ -19,9 +19,6 @@
     "description": {
       "type": "string"
     },
-    "price": {
-      "type": "integer"
-    },
     "image": {
       "type": "media",
       "multiple": true,
@@ -78,6 +75,9 @@
       "relation": "manyToOne",
       "target": "api::travel-spot.travel-spot",
       "inversedBy": "activities"
+    },
+    "Price": {
+      "type": "string"
     }
   }
 }
