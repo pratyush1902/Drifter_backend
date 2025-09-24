@@ -86,18 +86,6 @@
     "WhynotVisit": {
       "type": "json"
     },
-    "Reach_road": {
-      "type": "text"
-    },
-    "Reach_Bus": {
-      "type": "text"
-    },
-    "Reach_Train": {
-      "type": "text"
-    },
-    "Reach_Plane": {
-      "type": "text"
-    },
     "Traveltips": {
       "type": "json"
     },
@@ -150,6 +138,18 @@
     "slug": {
       "type": "uid",
       "targetField": "Name"
+    },
+    "ReachRoad": {
+      "type": "json"
+    },
+    "ReachTrain": {
+      "type": "json"
+    },
+    "ReachPlane": {
+      "type": "json"
+    },
+    "ReachBus": {
+      "type": "json"
     }
   }
 }

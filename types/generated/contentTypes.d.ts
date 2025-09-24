@@ -989,10 +989,6 @@ export interface ApiDestinationDestination extends Schema.CollectionType {
     >;
     WhyVisit: Attribute.JSON;
     WhynotVisit: Attribute.JSON;
-    Reach_road: Attribute.Text;
-    Reach_Bus: Attribute.Text;
-    Reach_Train: Attribute.Text;
-    Reach_Plane: Attribute.Text;
     Traveltips: Attribute.JSON;
     MoneySave: Attribute.JSON;
     ScamSafe: Attribute.JSON;
@@ -1016,6 +1012,10 @@ export interface ApiDestinationDestination extends Schema.CollectionType {
       'api::shooping-item.shooping-item'
     >;
     slug: Attribute.UID<'api::destination.destination', 'Name'>;
+    ReachRoad: Attribute.JSON;
+    ReachTrain: Attribute.JSON;
+    ReachPlane: Attribute.JSON;
+    ReachBus: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
